@@ -1,12 +1,16 @@
 from Modules.momentum import *
 from Modules.poloniex import *
 from Modules.volume import *
-from Modules.email  import *
+from Modules.email import *
 
 import datetime
 from datetime import timedelta
 
-def lambda_handler():
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+def lambda_handler(event, context):
 
     now_ts = datetime.datetime.now()
     now_ts_int = int(now_ts.strftime("%s"))
@@ -33,8 +37,8 @@ def lambda_handler():
     else:
         pass
 
-    send_email('emailrelaycontactform2018@gmail.com', 'Paradise40$',
-               "matt.j.livingston.40@gmail.com",
+    send_email('email', 'pw',
+               "recipients",
                "Crypto AAA Automated Daily Email", top_mom_coins)
 
     print(top_mom_coins)

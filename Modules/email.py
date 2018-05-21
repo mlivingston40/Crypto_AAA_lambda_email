@@ -1,5 +1,8 @@
 import smtplib
 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 def send_email(user, pwd, recipient, subject, body):
 
     FROM = user
@@ -23,21 +26,3 @@ def send_email(user, pwd, recipient, subject, body):
     except:
         print ("failed to send mail")
 
-
-# MAIL_SERVER= 'smtp.googlemail.com',
-# MAIL_PORT = 465,
-# MAIL_USE_SSL = True,
-# MAIL_USERNAME = 'emailrelaycontactform2018@gmail.com',
-# MAIL_PASSWORD = 'Paradise40$'
-#
-#
-#
-#
-#
-#
-# msg = Message(
-#     'Lead Contact - {} {} {} {}'.format(FirstName ,LastName ,Email ,Phone),
-#     sender='emailrelaycontactform2018@gmail.com',
-#     recipients=["matt.j.livingston.40@gmail.com"])
-# msg.body = 'test'
-# mail.send(msg)
